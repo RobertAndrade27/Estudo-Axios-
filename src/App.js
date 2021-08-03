@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import "./style.css";
-import api from "./services/api";
+import React, { useEffect, useState } from 'react';
+import './style.css';
+import api from './services/api';
 
 export default function App() {
   const [user, setUser] = useState([]);
 
   useEffect(() => {
-    api.get("/people").then(
-      (resp) => {
+    api.get('/people').then(
+      resp => {
         setUser(resp.data.results);
       },
-      (error) => console.log("Deu não meu bom ")
+      error => console.log('Deu não meu bom ')
     );
   });
 
@@ -22,6 +22,11 @@ export default function App() {
           return (
             <table>
               <td>{us.name}</td>
+              <td>
+                <h1 style={{ color: `${us.eye_color}`, fontSize: '12px' }}>
+                  {us.birth_year}
+                </h1>
+              </td>
             </table>
           );
         })}
