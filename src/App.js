@@ -21,9 +21,12 @@ export default function App() {
         {user.map((us, i) => {
           return (
             <table>
-              <td>{us.name}</td>
+              <td><h1>{us.name}</h1></td>
               <td>
-                <h1 style={{ color: `${us.eye_color}`, fontSize: '12px' }}>
+                <h1 
+                style={{ color: `${us.eye_color}`, 
+                fontSize: '12px' 
+                }}>
                   {us.birth_year}
                 </h1>
               </td>
